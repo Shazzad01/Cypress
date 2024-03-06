@@ -5,7 +5,7 @@ beforeEach(function(){
 })
 
 it('Add to cart', function(){
-
+    
     cy.title().should('eq','nopCommerce demo store')
     cy.get('#small-searchterms').type('Apple MacBook Pro 13-inch')
     cy.wait(5000)
