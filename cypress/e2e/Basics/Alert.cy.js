@@ -24,6 +24,7 @@ it('test',function(){
     })
 
     cy.xpath(js_confirm).click()
+    cy.xpath(result).should('have.text','You clicked: Ok')
     cy.wait(3000)
 
     
@@ -31,6 +32,8 @@ it('test',function(){
     cy.window().then(function($win){
         cy.stub($win,'prompt').returns('Hello Prompt')
         cy.xpath(js_prompt).click()
+        cy.xpath(result).should('have.text','You entered: Hello Prompt')
+        cy.wait(3000)
     })
 
 })
